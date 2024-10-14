@@ -1,0 +1,122 @@
+from tkinter import ttk
+from tkinter import *
+
+class EjemploProgra:
+    
+    def __init__(self,var):
+
+        self.wind = var
+        self.wind.title("Libreria")
+        self.wind.geometry("800x300")
+        self.wind.config(bg="pink")
+    
+        # Interfaz generada para la configuracion de la Pagina o Pantalla, wind.
+
+        frmLibro = LabelFrame(self.wind, text="Libro", font=("arial", 12))
+        frmLibro.pack(fill="both", expand="yes", padx=20, pady=15)
+
+        lblTitulo = Label(frmLibro,text="Titulo:", width=20)
+        lblTitulo.grid(row=1, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmLibro,width=15)
+        self.entLibro.grid(row=1,column=1,padx=5, pady=3)
+       
+        lblEditorial = Label(frmLibro,text="Editorial:", width=20)
+        lblEditorial.grid(row=2, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmLibro,width=15)
+        self.entLibro.grid(row=2,column=1,padx=5, pady=3)
+
+        lblgenero = Label(frmLibro,text="Genero:", width=20)
+        lblgenero.grid(row=3, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmLibro,width=15)
+        self.entLibro.grid(row=3,column=1,padx=5, pady=3)
+
+        lblnum_registro = Label(frmLibro,text="Num.registro:", width=20)
+        lblnum_registro.grid(row=4, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmLibro,width=15)
+        self.entLibro.grid(row=4,column=1,padx=5, pady=3)
+
+        lbltipo_pasta = Label(frmLibro,text="Tipo pasta:", width=20)
+        lbltipo_pasta.grid(row=5, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmLibro,width=15)
+        self.entLibro.grid(row=5,column=1,padx=5, pady=3)
+
+        lblfecha_de_punlicacion = Label(frmLibro,text="Fecha de publicacion:", width=20)
+        lblfecha_de_punlicacion.grid(row=6, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmLibro,width=15)
+        self.entLibro.grid(row=6,column=1,padx=5, pady=3)
+
+        lblnum_paginas = Label(frmLibro,text="Numero de paginas:", width=20)
+        lblnum_paginas.grid(row=7, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmLibro,width=15)
+        self.entLibro.grid(row=7,column=1,padx=5, pady=3)
+
+        btnRegistrar = Button(frmLibro, text="Registrar", width=12, height=2)
+        btnRegistrar.grid(row=8, column=0, padx=10, pady=10)
+
+        btnConsultar = Button(frmLibro, text="Consultar", width=12, height=2)
+        btnConsultar.grid(row=8, column=1, padx=10, pady=10)  
+        
+        btnCancelar = Button(frmLibro, text="Cancelar", width=12, height=2)
+        btnCancelar.grid(row=8, column=2, padx=10, pady=10)  
+        
+        btnBorrar1 = Button(frmLibro, text="Borrar Libro", width=12, height=2)
+        btnBorrar1.grid(row=8, column=3, padx=10, pady=10) 
+
+
+
+        frmAutor = LabelFrame(self.wind, text="Autor", font=("arial", 12))
+        frmAutor.pack(fill="both", expand="yes", padx=20, pady=15)
+
+        lblnombre = Label(frmAutor,text="Nombre:", width=20)
+        lblnombre.grid(row=1, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmAutor,width=15)
+        self.entLibro.grid(row=1,column=1,padx=5, pady=3)
+       
+        lblApellidos = Label(frmAutor,text="Apellidos:", width=20)
+        lblApellidos.grid(row=2, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmAutor,width=15)
+        self.entLibro.grid(row=2,column=1,padx=5, pady=3)
+
+        lblfecha_nacimiento = Label(frmAutor,text="Fecha de nacimiento:", width=20)
+        lblfecha_nacimiento.grid(row=3, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmAutor,width=15)
+        self.entLibro.grid(row=3,column=1,padx=5, pady=3)
+
+        lblDireccion = Label(frmAutor,text="Direccion:", width=20)
+        lblDireccion.grid(row=4, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmAutor,width=15)
+        self.entLibro.grid(row=4,column=1,padx=5, pady=3)
+
+        lblTelefono = Label(frmAutor,text="Telefono:", width=20)
+        lblTelefono.grid(row=5, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmAutor,width=15)
+        self.entLibro.grid(row=5,column=1,padx=5, pady=3)
+
+        lblCorreo = Label(frmAutor,text="Correo:", width=20)
+        lblCorreo.grid(row=6, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmAutor,width=15)
+        self.entLibro.grid(row=6,column=1,padx=5, pady=3)
+
+        lblNacionalidad = Label(frmAutor,text="Nacionalidad:", width=20)
+        lblNacionalidad.grid(row=7, column=0, padx=5, pady=3)
+        self.entLibro = Entry(frmAutor,width=15)
+        self.entLibro.grid(row=7,column=1,padx=5, pady=3)
+
+        btnRegistrar = Button(frmAutor, text="Registrar", width=12, height=2)
+        btnRegistrar.grid(row=8, column=0, padx=10, pady=10)
+
+        btnConsultar = Button(frmAutor, text="Consultar", width=12, height=2)
+        btnConsultar.grid(row=8, column=1, padx=10, pady=10)  
+        
+        btnCancelar = Button(frmAutor, text="Cancelar", width=12, height=2)
+        btnCancelar.grid(row=8, column=2, padx=10, pady=10)  
+        
+        btnBorrar1 = Button(frmAutor, text="Borrar Libro", width=12, height=2)
+        btnBorrar1.grid(row=8, column=3, padx=10, pady=10) 
+
+        
+    
+if __name__ == '__main__':
+    var = Tk()
+    EjemploProgra = EjemploProgra(var)
+    var.mainloop()
