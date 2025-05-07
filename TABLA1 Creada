@@ -1,0 +1,120 @@
+#PREGUNTAS
+print("\033[1mPRESUPUESTO DE OPERACION\033[0m")
+print(" ")
+print("\033[1;33mTabal 1\033[0m")
+nomempresa=input("¿Cual es el nombre de la empresa?")
+productos = []
+
+print("Ingresa el nombre de los tres productos:")
+# Pedir los nombres de los tres productos
+producto1 = input("Ingresa el nombre del Producto 1: ")
+producto2 = input("Ingresa el nombre del Producto 2: ")
+producto3 = input("Ingresa el nombre del Producto 3: ")
+
+#Ingresar las unidades a vender de cada producto PRIMER SEMESTRE
+
+print("\033[1mUNIDADES A VENDER PRIMER SEMESTRE\033[0m")
+print("_________________________________________")
+print("Producto ", producto1)
+unid1_vender1=float(input("Ingresa las unidades a vender: "))
+print("")
+print("Producto ", producto2)
+unid1_vender2=float(input("Ingresa las unidades a vender: "))
+print("")
+print("Producto ", producto3)
+unid1_vender3=float(input("Ingresa las unidades a vender: "))
+print("Las unidades que ingresaste son: ", unid1_vender1,(","),unid1_vender2,(","),unid1_vender3)
+#Ingresar las unidades a vender de cada producto
+
+print("")
+print("_________________________________________")
+print("\033[1mPRECIO DE VENTA PRIMER SEMESTRE\033[0m")
+print("Producto ", producto1)
+precio1_v1=float(input("Ingresa el precio de venta: "))
+print("")
+print("Producto ", producto2)
+precio1_v2=float(input("Ingresa el precio de venta: "))
+print("")
+print("Producto ", producto3)
+precio1_v3=float(input("Ingresa el precio de venta: "))
+print("")
+print("Los precio de venta que ingresaste son: ")
+print(f"{producto1}: ${precio1_v1:,.2f}")
+print(f"{producto2}: ${precio1_v2:,.2f}")
+print(f"{producto3}: ${precio1_v3:,.2f}")
+
+
+#IMPORTE DE VENTA PRIMER SEMESTRE
+
+print('\033[43m IMPORTE DE VENTA PRIMER SEMESTRE \033[0m')
+print("")
+import1=(unid1_vender1 * precio1_v1)
+import2=(unid1_vender2 * precio1_v2)
+import3=(unid1_vender3 * precio1_v3)
+
+print(f"Importe de venta del producto {producto1} = ${import1:,.2f}")
+print(f"Importe de venta del producto {producto2} = ${import2:,.2f}")
+print(f"Importe de venta del producto {producto3} = ${import3:,.2f}")
+
+print("")
+total = import1 + import2 + import3
+print(f"Total de ventas por semestre: ${total:,.2f}")
+print("")
+
+#-------------------------------------------------------------------------------------------------------
+#Ingresar las unidades a vender de cada producto SEGUNDO SEMESTRE
+
+print("_________________________________________")
+print("\033[1mUNIDADES A VENDER SEGUNDO SEMESTRE\033[0m")
+print("Producto ", producto1)
+unid2_vender1=float(input("Ingresa las unidades a vender: "))
+print("")
+print("Producto ", producto2)
+unid2_vender2=float(input("Ingresa las unidades a vender: "))
+print("")
+print("Producto ", producto3)
+unid2_vender3=float(input("Ingresa las unidades a vender: "))
+print("Las unidades que ingresaste son: ", unid2_vender1,(","),unid2_vender2,(","),unid2_vender3)
+#Ingresar las unidades a vender de cada producto
+
+print("")
+print("_________________________________________")
+print("\033[1mPRECIO DE VENTA SEGUNDO SEMESTRE\033[0m")
+print("Producto ", producto1)
+precio2_v1=float(input("Ingresa el precio de venta: "))
+print("")
+print("Producto ", producto2)
+precio2_v2=float(input("Ingresa el precio de venta: "))
+print("")
+print("Producto ", producto3)
+precio2_v3=float(input("Ingresa el precio de venta: "))
+print("")
+print("Los precio de venta que ingresaste son: ")
+print(f"{producto1}: ${precio2_v1:,.2f}")
+print(f"{producto2}: ${precio2_v2:,.2f}")
+print(f"{producto3}: ${precio2_v3:,.2f}")
+
+#IMPORTE DE VENTA SEGUNDO SEMESTRE
+print('\033[43m IMPORTE DE VENTA SEGUNDO SEMESTRE \033[0m')
+print("")
+import11=(unid2_vender1 * precio2_v1)
+import22=(unid2_vender2 * precio2_v2)
+import33=(unid2_vender3 * precio2_v3)
+
+print(f"Importe de venta del producto {producto1} = ${import11:,.2f}")
+print(f"Importe de venta del producto {producto2} = ${import22:,.2f}")
+print(f"Importe de venta del producto {producto3} = ${import33:,.2f}")
+print("")
+total2 = import11 + import22 + import33
+print(f"Total de ventas por semestre: ${total2:,.2f}")
+print("")
+
+print("TOTAL DE AÑO")
+print("")
+impaño1=(import1+import11)
+impaño2=(import2+import22)
+impaño3=(import3+import33)
+print(f"TOTAL DEL AÑO DEL PRODUCTO {producto1} = ${impaño1:,.2f}")
+print(f"TOTAL DEL AÑO DEL PRODUCTO {producto2} = ${impaño2:,.2f}")
+print(f"TOTAL DEL AÑO DEL PRODUCTO {producto3} = ${impaño3:,.2f}")
+print(f"TOTAL DE VENTAS TOTAL AÑO: = ${total+total2:,.2f}")
