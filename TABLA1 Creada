@@ -118,3 +118,66 @@ print(f"TOTAL DEL AÑO DEL PRODUCTO {producto1} = ${impaño1:,.2f}")
 print(f"TOTAL DEL AÑO DEL PRODUCTO {producto2} = ${impaño2:,.2f}")
 print(f"TOTAL DEL AÑO DEL PRODUCTO {producto3} = ${impaño3:,.2f}")
 print(f"TOTAL DE VENTAS TOTAL AÑO: = ${total+total2:,.2f}")
+
+#TABLA
+from tabulate import tabulate
+# -------------------------------------------------------
+# -------------------------------------------------------
+
+tabla = [
+    [f"{producto1}", "Unidades a vender", f"{unid1_vender1:,.0f}", f"{unid2_vender1:,.0f}", ""],
+    ["", "Precio de Venta", f"${precio1_v1:,.2f}", f"${precio2_v1:,.2f}", ""],
+    ["", "\033[1mImporte de venta\033[0m", f"${import1:,.2f}", f"${import11:,.2f}", f"${impaño1:,.2f}"],
+    [f"{producto2}", "Unidades a vender", f"{unid1_vender2:,.0f}", f"{unid2_vender2:,.0f}", ""],
+    ["", "Precio de Venta", f"${precio1_v2:,.2f}", f"${precio2_v2:,.2f}", ""],
+    ["", "\033[1mImporte de venta\033[0m", f"${import2:,.2f}", f"${import22:,.2f}", f"${impaño2:,.2f}"],
+    [f"{producto3}", "Unidades a vender", f"{unid1_vender3:,.0f}", f"{unid2_vender3:,.0f}", ""],
+    ["", "Precio de Venta", f"${precio1_v3:,.2f}", f"${precio2_v3:,.2f}", ""],
+    ["", "\033[1mImporte de venta\033[0m", f"${import3:,.2f}", f"${import33:,.2f}", f"${impaño3:,.2f}"],
+    ["", "\033[1;33mTotal de Ventas por semestre\033[0m", f"${import1 + import2 + import3:,.2f}", f"${import11 + import22 + import33:,.2f}", f"${(import1 + import2 + import3)+(import11 + import22 + import33):,.2f}"]
+]
+
+encabezados = ["", "", "1er Semestre", "2do Semestre", "Total Año"]
+
+print("\n" + tabulate(tabla, headers=encabezados, tablefmt="grid", stralign="center"))
+
+#_______________________________________________________________________________________
+#TABLA 2
+print("")
+print("\033[1;33mTabal 2\033[0m")
+print("")
+print("Ingresa los años con los que trabajaras: ")
+año1=int(input("Primer año: "))
+año2=int(input("Segundo año: "))
+print("Los años que ingresaste son: ",año1 , año2)
+saldo=float(input(f"¿Cual es el saldo de clientes del {año1}?"))
+ventas=total+total2
+totaclientes=saldo+ventas
+print(f"Ventas{año2}:{ventas}")
+print(f"Total de clientes del {año2} : ${totaclientes:,.2f}")
+print("Entradas de efectivo:")
+porc=int(input("¿Con que porcentaje se hara la cobranza?: "))
+porcob1=float(input(f"Ingresa por cobrar del año {año1}:"))
+resultpor= ventas * (porc / 100)
+print(f"El resultado de la cobranza del año {año2} por el porcentaje que se ingreso es: ,${resultpor:,.2f}")
+print(f"Total de Entradas del ,{año2}: ,${porcob1+resultpor:,.2f}")
+salclien=totaclientes-(porcob1+resultpor)
+print(f"\033[1;33mSaldo de cliente del {año2}\033[0m: ${salclien:,.2f}")
+
+tabla = [
+    [f"Saldo de clientes {año1}", f"${saldo:,.2f}", ""],
+    [f"Ventas {año2}", f"${ventas:,.2f}", ""],
+    [f"Total de clientes {año2}", f"${totaclientes:,.2f}", ""],
+    ["", "", ""],
+    ["Entradas de Efectivo:", "", ""],
+    [f"Por Cobranza del {año1}", f"${porcob1:,.2f}", "(R. 100%)"],
+    [f"Por Cobranza del {año2}", f"${resultpor:,.2f}", f"(R. {porc:.0f}%)"],
+    [f"Total de Entradas {año2}", f"${porcob1+resultpor:,.2f}", ""],
+    ["", "", ""],
+    [f"\033[1;33mSaldo de Clientes del {año2}\033[0m", f"${salclien:,.2f}", ""]
+]
+
+encabezados = ["Descripción", "Importe", "Notas"]
+
+print("\n" + tabulate(tabla, headers=encabezados, tablefmt="grid", stralign="right"))
+
