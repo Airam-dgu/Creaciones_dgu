@@ -144,11 +144,11 @@ print("\n" + tabulate(tabla, headers=encabezados, tablefmt="grid", stralign="cen
 #_______________________________________________________________________________________
 #TABLA 2
 print("")
-print("\033[1;33mTabal 2\033[0m")
+print("\033[1;33mTabla 2:Determinación del saldo de Clientes y Flujo de Entradas\033[0m")
 print("")
 print("Ingresa los años con los que trabajaras: ")
-año1=int(input("Primer año: "))
-año2=int(input("Segundo año: "))
+año1=input("Primer año: ")
+año2=input("Segundo año: ")
 print("Los años que ingresaste son: ",año1 , año2)
 saldo=float(input(f"¿Cual es el saldo de clientes del {año1}?"))
 ventas=total+total2
@@ -179,5 +179,61 @@ tabla = [
 
 encabezados = ["Descripción", "Importe", "Notas"]
 
+print("\n" + tabulate(tabla, headers=encabezados, tablefmt="grid", stralign="right"))
+
+#Tabla 3 Presupuesto de produccion
+#_______________________________________________________________________________________
+#Primer semestre
+print("")
+print("\033[1;33mTabla 3: Presupuesto de Produccion\033[0m")
+print("")
+print("1er semestre")
+print("Producto ",producto1)
+print("")
+print("Undides a vender: ",unid1_vender1)
+inventario_fin=float(input("Inventario final: "))
+total_uni= unid1_vender1+inventario_fin
+print("Total de Unidades",total_uni)
+inventario_ini=float(input("Inventario inicial: "))
+unid_produ= total_uni-inventario_ini
+print(f"\nUnidades a producir: ${unid_produ:,.2f}")
+
+#Segundo Semestre
+print("2do Semestre")
+print("")
+print("Undides a vender: ",unid2_vender1)
+inventario_fin2=float(input("Inventario final: "))
+total_uni2= unid2_vender1+inventario_fin2
+print("Total de Unidades",total_uni2)
+print("Inventario inicial: ",inventario_fin)
+unid_produ2= total_uni2-inventario_fin
+print(f"\nUnidades a producir: ${unid_produ2:,.2f}")
+
+#Total año producto1
+
+print("Total",año2)
+print("")
+print("Undides a vender: ",unid1_vender1+unid2_vender1)
+print("Inventario final: ",inventario_fin2)
+total_unid_año1=(unid1_vender1+unid2_vender1)+inventario_fin2
+print("Total de Unidades",total_unid_año1)
+print("Inventario inicial: ",inventario_fin)
+unid_produ_total= unid_produ+unid_produ2
+print(f"\nUnidades a producir: ${unid_produ_total:,.2f}")
+
+tabla = [
+    ["Unidades a vender", unid1_vender1, unid2_vender1, (unid1_vender1 + unid2_vender1)],
+    ["Inventario final", inventario_fin, inventario_fin2, inventario_fin2],
+    ["Total de Unidades", total_uni, total_uni2, (total_unid_año1)],
+    ["Inventario inicial", inventario_ini, inventario_fin, inventario_ini],
+    ["Unidades a Producir", unid_produ, unid_produ2, unid_produ_total]
+]
+
+# Mostrar la tabla
+print("\n" + tabulate(
+    tabla,
+    headers=["", "1er Semestre", "2do Semestre", "Total Año"],
+    tablefmt="grid",
+    floatfmt=(".0f", ".0f", ".0f", ".0f")))
 print("\n" + tabulate(tabla, headers=encabezados, tablefmt="grid", stralign="right"))
 
