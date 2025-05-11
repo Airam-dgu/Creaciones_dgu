@@ -183,11 +183,11 @@ print("\n" + tabulate(tabla, headers=encabezados, tablefmt="grid", stralign="rig
 
 #Tabla 3 Presupuesto de produccion
 #_______________________________________________________________________________________
-#Primer semestre
+#Primer semestre producto 1
 print("")
 print("\033[1;33mTabla 3: Presupuesto de Produccion\033[0m")
 print("")
-print("1er semestre")
+print("\033[1mPrimer Semestre\033[0m")
 print("Producto ",producto1)
 print("")
 print("Undides a vender: ",unid1_vender1)
@@ -199,7 +199,7 @@ unid_produ= total_uni-inventario_ini
 print(f"\nUnidades a producir: ${unid_produ:,.2f}")
 
 #Segundo Semestre
-print("2do Semestre")
+print("\033[1mSegundo Semestre\033[0m")
 print("")
 print("Undides a vender: ",unid2_vender1)
 inventario_fin2=float(input("Inventario final: "))
@@ -208,10 +208,10 @@ print("Total de Unidades",total_uni2)
 print("Inventario inicial: ",inventario_fin)
 unid_produ2= total_uni2-inventario_fin
 print(f"\nUnidades a producir: ${unid_produ2:,.2f}")
+print("")
 
 #Total año producto1
-
-print("Total",año2)
+print("\033[1mTotal\033[0m",año2)
 print("")
 print("Undides a vender: ",unid1_vender1+unid2_vender1)
 print("Inventario final: ",inventario_fin2)
@@ -237,3 +237,130 @@ print("\n" + tabulate(
     floatfmt=(".0f", ".0f", ".0f", ".0f")))
 print("\n" + tabulate(tabla, headers=encabezados, tablefmt="grid", stralign="right"))
 
+
+#Tabla 3 Presupuesto de produccion
+#_______________________________________________________________________________________
+#Primer semestre producto 2
+
+print("")
+print("\033[1mPrimer Semestre\033[0m")
+print("Producto ",producto2)
+print("")
+print("Undides a vender: ",unid1_vender2)
+inventario1_fin2=float(input("Inventario final: "))
+total2_uni1= unid1_vender2+inventario1_fin2
+print("Total de Unidades",total2_uni1)
+inventario1_ini2=float(input("Inventario inicial: "))
+unid1_produ2= total2_uni1-inventario1_ini2
+print(f"\nUnidades a producir: ${unid1_produ2:,.2f}")
+
+#Segundo Semestre producto 2
+print("\033[1mSegundo Semestre\033[0m")
+print("")
+print("Undides a vender: ",unid2_vender2)
+inventario2_fin2=float(input("Inventario final: "))
+total2_uni2= unid2_vender2+inventario2_fin2
+print("Total de Unidades",total2_uni2)
+inventario2_ini2 = inventario1_fin2
+print("Inventario inicial: ",inventario1_fin2)
+unid2_produ2= total2_uni2-inventario2_ini2
+print(f"\nUnidades a producir: ${unid2_produ2:,.2f}")
+print("")
+
+#Total año producto 2
+print("\033[1mTotal\033[0m",año2)
+print("")
+print("Undides a vender: ",unid1_vender2+unid2_vender2)
+print("Inventario final: ",inventario2_fin2)
+total_unid_año2=(unid1_vender2+unid2_vender2)+inventario2_fin2
+print("Total de Unidades",total_unid_año2)
+print("Inventario inicial: ",inventario1_ini2)
+unid_produ_total2= unid1_produ2+unid2_produ2
+print(f"\nUnidades a producir: ${unid_produ_total2:,.2f}")
+
+tabla2 = [
+    ["Unidades a vender", unid1_vender2, unid2_vender2, (unid1_vender2+unid2_vender2)],
+    ["Inventario final", inventario1_fin2, inventario2_fin2,inventario2_fin2 ],
+    ["Total de Unidades", total2_uni1, total2_uni2, total_unid_año2],
+    ["Inventario inicial", inventario1_ini2, inventario1_fin2, inventario1_ini2],
+    ["Unidades a producir", unid1_produ2, unid2_produ2,unid_produ_total2 ]
+]
+
+# Mostrar tabla
+print("\n" + tabulate(
+    tabla2,
+    headers=["", "1er Semestre", "2do Semestre", "Total Año"],
+    tablefmt="grid",
+    floatfmt=(".0f", ".0f", ".0f", ".0f")))
+
+#Tabla 3 Presupuesto de produccion
+#_______________________________________________________________________________________
+#Primer semestre producto 3
+
+print("")
+print("\033[1mPrimer Semestre\033[0m")
+print("Producto ",producto3)
+print("")
+print("Undides a vender: ",unid1_vender3)
+inventario1_fin3=float(input("Inventario final: "))
+total3_uni1= unid1_vender3+inventario1_fin3
+print("Total de Unidades",total3_uni1)
+inventario1_ini3=float(input("Inventario inicial: "))
+unid1_produ3= total3_uni1-inventario1_ini3
+print(f"\nUnidades a producir: ${unid1_produ3:,.2f}")
+print("")
+#Segundo Semestre producto 3
+
+print("\033[1mSegundo Semestre\033[0m")
+print("")
+print("Undides a vender: ",unid2_vender3)
+inventario2_fin3=float(input("Inventario final: "))
+total3_uni2= unid2_vender3+inventario2_fin3
+print("Total de Unidades",total3_uni2)
+inventario2_ini3 = inventario1_fin3
+print("Inventario inicial: ",inventario1_fin3)
+unid2_produ3 = total3_uni2 - inventario2_ini3
+print(f"\nUnidades a producir: ${unid2_produ3:,.2f}")
+print("")
+
+
+#Total año producto 3
+print("\033[1mTotal\033[0m",año2)
+print("")
+print("Undides a vender: ",unid1_vender3+unid2_vender3)
+print("Inventario final: ",inventario2_fin3)
+total_unid_año3=(unid1_vender3+unid2_vender3)+inventario2_fin3
+print("Total de Unidades",total_unid_año3)
+# Validamos que este valor provenga del semestre anterior
+inventario2_ini3 = inventario1_fin3
+print("Inventario inicial (mismo que final del primer semestre):", inventario1_fin3)
+unid_produ_total3= unid1_produ3+unid2_produ3
+print(f"\nUnidades a producir: ${unid_produ_total3:,.2f}")
+
+tabla3 = [
+    ["Unidades a vender", unid1_vender3, unid2_vender3, (unid1_vender3+unid2_vender3)],
+    ["Inventario final", inventario1_fin3, inventario2_fin3, inventario2_fin3],
+    ["Total de Unidades", total3_uni1, total3_uni2, total_unid_año3],
+    ["Inventario inicial", inventario1_ini3, inventario1_fin3, inventario1_ini3],
+    ["Unidades a producir", unid1_produ3, unid2_produ3, unid_produ_total3]
+]
+
+# Mostrar tabla
+print("\n" + tabulate(
+    tabla3,
+    headers=["", "1er Semestre", "2do Semestre", "Total Año"],
+    tablefmt="grid",
+    floatfmt=(".0f", ".0f", ".0f", ".0f")))
+print("")
+print("\033[1mResumen tabla 3\033[0m")
+
+print("")
+# === IMPRIMIR LAS 3 TABLAS ===
+print("\n\033[1;34m--- TABLA: Producto D ---\033[0m")
+print(tabulate(tabla, headers=["", "1er Semestre", "2do Semestre", "Total Año"], tablefmt="grid", floatfmt=(".0f", ".0f", ".0f", ".0f")))
+
+print("\n\033[1;34m--- TABLA: Producto O ---\033[0m")
+print(tabulate(tabla2, headers=["", "1er Semestre", "2do Semestre", "Total Año"], tablefmt="grid", floatfmt=(".0f", ".0f", ".0f", ".0f")))
+
+print("\n\033[1;34m--- TABLA: Producto Z ---\033[0m")
+print(tabulate(tabla3, headers=["", "1er Semestre", "2do Semestre", "Total Año"], tablefmt="grid", floatfmt=(".0f", ".0f", ".0f", ".0f")))
