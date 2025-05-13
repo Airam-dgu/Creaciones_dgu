@@ -1,0 +1,1099 @@
+#PREGUNTAS
+print("\033[1mPRESUPUESTO DE OPERACION\033[0m")
+print(" ")
+print("\033[1;33mTabal 1\033[0m")
+nomempresa=input("¿Cual es el nombre de la empresa?")
+productos = []
+
+print("Ingresa el nombre de los tres productos:")
+# Pedir los nombres de los tres productos
+producto1 = input("Ingresa el nombre del Producto 1: ")
+producto2 = input("Ingresa el nombre del Producto 2: ")
+producto3 = input("Ingresa el nombre del Producto 3: ")
+
+#Ingresar las unidades a vender de cada producto PRIMER SEMESTRE
+
+print("\033[1mUNIDADES A VENDER PRIMER SEMESTRE\033[0m")
+print("_________________________________________")
+print("Producto ", producto1)
+unid1_vender1=float(input("Ingresa las unidades a vender: "))
+print("")
+print("Producto ", producto2)
+unid1_vender2=float(input("Ingresa las unidades a vender: "))
+print("")
+print("Producto ", producto3)
+unid1_vender3=float(input("Ingresa las unidades a vender: "))
+print("Las unidades que ingresaste son: ", unid1_vender1,(","),unid1_vender2,(","),unid1_vender3)
+#Ingresar las unidades a vender de cada producto
+
+print("")
+print("_________________________________________")
+print("\033[1mPRECIO DE VENTA PRIMER SEMESTRE\033[0m")
+print("Producto ", producto1)
+precio1_v1=float(input("Ingresa el precio de venta: "))
+print("")
+print("Producto ", producto2)
+precio1_v2=float(input("Ingresa el precio de venta: "))
+print("")
+print("Producto ", producto3)
+precio1_v3=float(input("Ingresa el precio de venta: "))
+print("")
+print("Los precio de venta que ingresaste son: ")
+print(f"{producto1}: ${precio1_v1:,.2f}")
+print(f"{producto2}: ${precio1_v2:,.2f}")
+print(f"{producto3}: ${precio1_v3:,.2f}")
+
+
+#IMPORTE DE VENTA PRIMER SEMESTRE
+
+print('\033[43m IMPORTE DE VENTA PRIMER SEMESTRE \033[0m')
+print("")
+import1=(unid1_vender1 * precio1_v1)
+import2=(unid1_vender2 * precio1_v2)
+import3=(unid1_vender3 * precio1_v3)
+
+print(f"Importe de venta del producto {producto1} = ${import1:,.2f}")
+print(f"Importe de venta del producto {producto2} = ${import2:,.2f}")
+print(f"Importe de venta del producto {producto3} = ${import3:,.2f}")
+
+print("")
+total = import1 + import2 + import3
+print(f"Total de ventas por semestre: ${total:,.2f}")
+print("")
+
+#-------------------------------------------------------------------------------------------------------
+#Ingresar las unidades a vender de cada producto SEGUNDO SEMESTRE
+
+print("_________________________________________")
+print("\033[1mUNIDADES A VENDER SEGUNDO SEMESTRE\033[0m")
+print("Producto ", producto1)
+unid2_vender1=float(input("Ingresa las unidades a vender: "))
+print("")
+print("Producto ", producto2)
+unid2_vender2=float(input("Ingresa las unidades a vender: "))
+print("")
+print("Producto ", producto3)
+unid2_vender3=float(input("Ingresa las unidades a vender: "))
+print("Las unidades que ingresaste son: ", unid2_vender1,(","),unid2_vender2,(","),unid2_vender3)
+#Ingresar las unidades a vender de cada producto
+
+print("")
+print("_________________________________________")
+print("\033[1mPRECIO DE VENTA SEGUNDO SEMESTRE\033[0m")
+print("Producto ", producto1)
+precio2_v1=float(input("Ingresa el precio de venta: "))
+print("")
+print("Producto ", producto2)
+precio2_v2=float(input("Ingresa el precio de venta: "))
+print("")
+print("Producto ", producto3)
+precio2_v3=float(input("Ingresa el precio de venta: "))
+print("")
+print("Los precio de venta que ingresaste son: ")
+print(f"{producto1}: ${precio2_v1:,.2f}")
+print(f"{producto2}: ${precio2_v2:,.2f}")
+print(f"{producto3}: ${precio2_v3:,.2f}")
+
+#IMPORTE DE VENTA SEGUNDO SEMESTRE
+print('\033[43m IMPORTE DE VENTA SEGUNDO SEMESTRE \033[0m')
+print("")
+import11=(unid2_vender1 * precio2_v1)
+import22=(unid2_vender2 * precio2_v2)
+import33=(unid2_vender3 * precio2_v3)
+
+print(f"Importe de venta del producto {producto1} = ${import11:,.2f}")
+print(f"Importe de venta del producto {producto2} = ${import22:,.2f}")
+print(f"Importe de venta del producto {producto3} = ${import33:,.2f}")
+print("")
+total2 = import11 + import22 + import33
+print(f"Total de ventas por semestre: ${total2:,.2f}")
+print("")
+
+print("TOTAL DE AÑO")
+print("")
+impaño1=(import1+import11)
+impaño2=(import2+import22)
+impaño3=(import3+import33)
+print(f"TOTAL DEL AÑO DEL PRODUCTO {producto1} = ${impaño1:,.2f}")
+print(f"TOTAL DEL AÑO DEL PRODUCTO {producto2} = ${impaño2:,.2f}")
+print(f"TOTAL DEL AÑO DEL PRODUCTO {producto3} = ${impaño3:,.2f}")
+print(f"TOTAL DE VENTAS TOTAL AÑO: = ${total+total2:,.2f}")
+
+#TABLA
+from tabulate import tabulate
+# -------------------------------------------------------
+# -------------------------------------------------------
+
+tabla = [
+    [f"{producto1}", "Unidades a vender", f"{unid1_vender1:,.0f}", f"{unid2_vender1:,.0f}", ""],
+    ["", "Precio de Venta", f"${precio1_v1:,.2f}", f"${precio2_v1:,.2f}", ""],
+    ["", "\033[1mImporte de venta\033[0m", f"${import1:,.2f}", f"${import11:,.2f}", f"${impaño1:,.2f}"],
+    [f"{producto2}", "Unidades a vender", f"{unid1_vender2:,.0f}", f"{unid2_vender2:,.0f}", ""],
+    ["", "Precio de Venta", f"${precio1_v2:,.2f}", f"${precio2_v2:,.2f}", ""],
+    ["", "\033[1mImporte de venta\033[0m", f"${import2:,.2f}", f"${import22:,.2f}", f"${impaño2:,.2f}"],
+    [f"{producto3}", "Unidades a vender", f"{unid1_vender3:,.0f}", f"{unid2_vender3:,.0f}", ""],
+    ["", "Precio de Venta", f"${precio1_v3:,.2f}", f"${precio2_v3:,.2f}", ""],
+    ["", "\033[1mImporte de venta\033[0m", f"${import3:,.2f}", f"${import33:,.2f}", f"${impaño3:,.2f}"],
+    ["", "\033[1;33mTotal de Ventas por semestre\033[0m", f"${import1 + import2 + import3:,.2f}", f"${import11 + import22 + import33:,.2f}", f"${(import1 + import2 + import3)+(import11 + import22 + import33):,.2f}"]
+]
+
+encabezados = ["", "", "1er Semestre", "2do Semestre", "Total Año"]
+
+print("\n" + tabulate(tabla, headers=encabezados, tablefmt="grid", stralign="center"))
+
+#_______________________________________________________________________________________
+#TABLA 2
+print("")
+print("\033[1;33mTabla 2:Determinación del saldo de Clientes y Flujo de Entradas\033[0m")
+print("")
+print("Ingresa los años con los que trabajaras: ")
+año1=input("Primer año: ")
+año2=input("Segundo año: ")
+print("Los años que ingresaste son: ",año1 , año2)
+saldo=float(input(f"¿Cual es el saldo de clientes del {año1}?"))
+ventas=total+total2
+totaclientes=saldo+ventas
+print(f"Ventas{año2}:{ventas}")
+print(f"Total de clientes del {año2} : ${totaclientes:,.2f}")
+print("Entradas de efectivo:")
+porc=int(input("¿Con que porcentaje se hara la cobranza?: "))
+porcob1=float(input(f"Ingresa por cobrar del año {año1}:"))
+resultpor= ventas * (porc / 100)
+print(f"El resultado de la cobranza del año {año2} por el porcentaje que se ingreso es: ,${resultpor:,.2f}")
+print(f"Total de Entradas del ,{año2}: ,${porcob1+resultpor:,.2f}")
+salclien=totaclientes-(porcob1+resultpor)
+print(f"\033[1;33mSaldo de cliente del {año2}\033[0m: ${salclien:,.2f}")
+
+tabla = [
+    [f"Saldo de clientes {año1}", f"${saldo:,.2f}", ""],
+    [f"Ventas {año2}", f"${ventas:,.2f}", ""],
+    [f"Total de clientes {año2}", f"${totaclientes:,.2f}", ""],
+    ["", "", ""],
+    ["Entradas de Efectivo:", "", ""],
+    [f"Por Cobranza del {año1}", f"${porcob1:,.2f}", "(R. 100%)"],
+    [f"Por Cobranza del {año2}", f"${resultpor:,.2f}", f"(R. {porc:.0f}%)"],
+    [f"Total de Entradas {año2}", f"${porcob1+resultpor:,.2f}", ""],
+    ["", "", ""],
+    [f"\033[1;33mSaldo de Clientes del {año2}\033[0m", f"${salclien:,.2f}", ""]
+]
+
+encabezados = ["Descripción", "Importe", "Notas"]
+
+print("\n" + tabulate(tabla, headers=encabezados, tablefmt="grid", stralign="right"))
+
+#Tabla 3 Presupuesto de produccion
+#_______________________________________________________________________________________
+#Primer semestre producto 1
+print("")
+print("\033[1;33mTabla 3: Presupuesto de Produccion\033[0m")
+print("")
+print("\033[1mPrimer Semestre\033[0m")
+print("Producto ",producto1)
+print("")
+print("Undides a vender: ",unid1_vender1)
+inventario_fin=float(input("Inventario final: "))
+total_uni= unid1_vender1+inventario_fin
+print("Total de Unidades",total_uni)
+inventario_ini=float(input("Inventario inicial: "))
+unid_produ= total_uni-inventario_ini
+print(f"\nUnidades a producir: ${unid_produ:,.2f}")
+
+#Segundo Semestre
+print("\033[1mSegundo Semestre\033[0m")
+print("")
+print("Undides a vender: ",unid2_vender1)
+inventario_fin2=float(input("Inventario final: "))
+total_uni2= unid2_vender1+inventario_fin2
+print("Total de Unidades",total_uni2)
+print("Inventario inicial: ",inventario_fin)
+unid_produ2= total_uni2-inventario_fin
+print(f"\nUnidades a producir: ${unid_produ2:,.2f}")
+print("")
+
+#Total año producto1
+print("\033[1mTotal\033[0m",año2)
+print("")
+print("Undides a vender: ",unid1_vender1+unid2_vender1)
+print("Inventario final: ",inventario_fin2)
+total_unid_año1=(unid1_vender1+unid2_vender1)+inventario_fin2
+print("Total de Unidades",total_unid_año1)
+print("Inventario inicial: ",inventario_fin)
+unid_produ_total= unid_produ+unid_produ2
+print(f"\nUnidades a producir: ${unid_produ_total:,.2f}")
+
+tabla = [
+    ["Unidades a vender", unid1_vender1, unid2_vender1, (unid1_vender1 + unid2_vender1)],
+    ["Inventario final", inventario_fin, inventario_fin2, inventario_fin2],
+    ["Total de Unidades", total_uni, total_uni2, (total_unid_año1)],
+    ["Inventario inicial", inventario_ini, inventario_fin, inventario_ini],
+    ["Unidades a Producir", unid_produ, unid_produ2, unid_produ_total]
+]
+
+# Mostrar la tabla
+print("\n" + tabulate(
+    tabla,
+    headers=["", "1er Semestre", "2do Semestre", "Total Año"],
+    tablefmt="grid",
+    floatfmt=(".0f", ".0f", ".0f", ".0f")))
+print("\n" + tabulate(tabla, headers=encabezados, tablefmt="grid", stralign="right"))
+
+
+#Tabla 3 Presupuesto de produccion
+#_______________________________________________________________________________________
+#Primer semestre producto 2
+
+print("")
+print("\033[1mPrimer Semestre\033[0m")
+print("Producto ",producto2)
+print("")
+print("Undides a vender: ",unid1_vender2)
+inventario1_fin2=float(input("Inventario final: "))
+total2_uni1= unid1_vender2+inventario1_fin2
+print("Total de Unidades",total2_uni1)
+inventario1_ini2=float(input("Inventario inicial: "))
+unid1_produ2= total2_uni1-inventario1_ini2
+print(f"\nUnidades a producir: ${unid1_produ2:,.2f}")
+
+#Segundo Semestre producto 2
+print("\033[1mSegundo Semestre\033[0m")
+print("")
+print("Undides a vender: ",unid2_vender2)
+inventario2_fin2=float(input("Inventario final: "))
+total2_uni2= unid2_vender2+inventario2_fin2
+print("Total de Unidades",total2_uni2)
+inventario2_ini2 = inventario1_fin2
+print("Inventario inicial: ",inventario1_fin2)
+unid2_produ2= total2_uni2-inventario2_ini2
+print(f"\nUnidades a producir: ${unid2_produ2:,.2f}")
+print("")
+
+#Total año producto 2
+print("\033[1mTotal\033[0m",año2)
+print("")
+print("Undides a vender: ",unid1_vender2+unid2_vender2)
+print("Inventario final: ",inventario2_fin2)
+total_unid_año2=(unid1_vender2+unid2_vender2)+inventario2_fin2
+print("Total de Unidades",total_unid_año2)
+print("Inventario inicial: ",inventario1_ini2)
+unid_produ_total2= unid1_produ2+unid2_produ2
+print(f"\nUnidades a producir: ${unid_produ_total2:,.2f}")
+
+tabla2 = [
+    ["Unidades a vender", unid1_vender2, unid2_vender2, (unid1_vender2+unid2_vender2)],
+    ["Inventario final", inventario1_fin2, inventario2_fin2,inventario2_fin2 ],
+    ["Total de Unidades", total2_uni1, total2_uni2, total_unid_año2],
+    ["Inventario inicial", inventario1_ini2, inventario1_fin2, inventario1_ini2],
+    ["Unidades a producir", unid1_produ2, unid2_produ2,unid_produ_total2 ]
+]
+
+# Mostrar tabla
+print("\n" + tabulate(
+    tabla2,
+    headers=["", "1er Semestre", "2do Semestre", "Total Año"],
+    tablefmt="grid",
+    floatfmt=(".0f", ".0f", ".0f", ".0f")))
+
+#Tabla 3 Presupuesto de produccion
+#_______________________________________________________________________________________
+#Primer semestre producto 3
+
+print("")
+print("\033[1mPrimer Semestre\033[0m")
+print("Producto ",producto3)
+print("")
+print("Undides a vender: ",unid1_vender3)
+inventario1_fin3=float(input("Inventario final: "))
+total3_uni1= unid1_vender3+inventario1_fin3
+print("Total de Unidades",total3_uni1)
+inventario1_ini3=float(input("Inventario inicial: "))
+unid1_produ3= total3_uni1-inventario1_ini3
+print(f"\nUnidades a producir: ${unid1_produ3:,.2f}")
+print("")
+#Segundo Semestre producto 3
+
+print("\033[1mSegundo Semestre\033[0m")
+print("")
+print("Undides a vender: ",unid2_vender3)
+inventario2_fin3=float(input("Inventario final: "))
+total3_uni2= unid2_vender3+inventario2_fin3
+print("Total de Unidades",total3_uni2)
+inventario2_ini3 = inventario1_fin3
+print("Inventario inicial: ",inventario1_fin3)
+unid2_produ3 = total3_uni2 - inventario2_ini3
+print(f"\nUnidades a producir: ${unid2_produ3:,.2f}")
+print("")
+
+
+#Total año producto 3
+print("\033[1mTotal\033[0m",año2)
+print("")
+print("Undides a vender: ",unid1_vender3+unid2_vender3)
+print("Inventario final: ",inventario2_fin3)
+total_unid_año3=(unid1_vender3+unid2_vender3)+inventario2_fin3
+print("Total de Unidades",total_unid_año3)
+# Validamos que este valor provenga del semestre anterior
+inventario2_ini3 = inventario1_fin3
+print("Inventario inicial (mismo que final del primer semestre):", inventario1_fin3)
+unid_produ_total3= unid1_produ3+unid2_produ3
+print(f"\nUnidades a producir: ${unid_produ_total3:,.2f}")
+
+tabla3 = [
+    ["Unidades a vender", unid1_vender3, unid2_vender3, (unid1_vender3+unid2_vender3)],
+    ["Inventario final", inventario1_fin3, inventario2_fin3, inventario2_fin3],
+    ["Total de Unidades", total3_uni1, total3_uni2, total_unid_año3],
+    ["Inventario inicial", inventario1_ini3, inventario1_fin3, inventario1_ini3],
+    ["Unidades a producir", unid1_produ3, unid2_produ3, unid_produ_total3]
+]
+
+# Mostrar tabla
+print("\n" + tabulate(
+    tabla3,
+    headers=["", "1er Semestre", "2do Semestre", "Total Año"],
+    tablefmt="grid",
+    floatfmt=(".0f", ".0f", ".0f", ".0f")))
+print("")
+print("\033[1mResumen tabla 3\033[0m")
+
+print("")
+# === IMPRIMIR LAS 3 TABLAS ===
+print("\n\033[1;34m--- TABLA: Producto D ---\033[0m")
+print(tabulate(tabla, headers=["", "1er Semestre", "2do Semestre", "Total Año"], tablefmt="grid", floatfmt=(".0f", ".0f", ".0f", ".0f")))
+
+print("\n\033[1;34m--- TABLA: Producto O ---\033[0m")
+print(tabulate(tabla2, headers=["", "1er Semestre", "2do Semestre", "Total Año"], tablefmt="grid", floatfmt=(".0f", ".0f", ".0f", ".0f")))
+
+print("\n\033[1;34m--- TABLA: Producto Z ---\033[0m")
+print(tabulate(tabla3, headers=["", "1er Semestre", "2do Semestre", "Total Año"], tablefmt="grid", floatfmt=(".0f", ".0f", ".0f", ".0f")))
+
+#___________________________________________________________________________________
+# Tabla 4 - Presupuesto de Requerimiento de Materiales para Producto 1
+
+print("")
+print("\033[1;33mTabla 4: Presupuesto de Requerimiento de materiales\033[0m")
+print("Producto:", producto1)
+print("Unidades a producir primer semestre:", unid_produ)
+print("Unidades a producir segundo semestre:", unid_produ2)
+print("Unidades a producir total año:", unid_produ_total)
+
+# === Material 1 ===
+print("\n\033[1mPrimer Material\033[0m")
+mat1_produ1 = input("Nombre del material: ")
+req_mat1_produ1 = int(input("Requerimiento por unidad: "))
+
+mat1_req_sem1 = unid_produ * req_mat1_produ1
+mat1_req_sem2 = unid_produ2 * req_mat1_produ1
+mat1_req_total = unid_produ_total * req_mat1_produ1
+
+print(f"\033[1mTotal de material {mat1_produ1} requerido en el 1er semestre: ,{mat1_req_sem1}\033[0m")
+print(f"\033[1mTotal de material {mat1_produ1} requerido en el 2do semestre: ,{mat1_req_sem2}\033[0m")
+print(f"\033[1mTotal de material {mat1_produ1} requerido en el año {año2}: ,{mat1_req_total}\033[0m")
+
+# === Material 2 ===
+print("\n\033[1mSegundo Material\033[0m")
+mat2_produ1 = input("Nombre del material: ")
+req_mat2_produ1 = int(input("Requerimiento por unidad: "))
+
+mat2_req_sem1 = unid_produ * req_mat2_produ1
+mat2_req_sem2 = unid_produ2 * req_mat2_produ1
+mat2_req_total = unid_produ_total * req_mat2_produ1
+
+print(f"\033[1mTotal de material {mat2_produ1} requerido en el 1er semestre: ,{mat2_req_sem1}\033[0m")
+print(f"\033[1mTotal de material {mat2_produ1} requerido en el 2do semestre: ,{mat2_req_sem2}\033[0m")
+print(f"\033[1mTotal de material {mat2_produ1} requerido en el año {año2}: ,{mat2_req_total}\033[0m")
+
+# === Material 3 ===
+print("\n\033[1mTercer Material\033[0m")
+mat3_produ1 = input("Nombre del material: ")
+req_mat3_produ1 = int(input("Requerimiento por unidad: "))
+
+mat3_req_sem1 = unid_produ * req_mat3_produ1
+mat3_req_sem2 = unid_produ2 * req_mat3_produ1
+mat3_req_total = unid_produ_total * req_mat3_produ1
+
+print(f"\033[1mTotal de material {mat3_produ1} requerido en el 1er semestre: ,{mat3_req_sem1}\033[0m")
+print(f"\033[1mTotal de material {mat3_produ1} requerido en el 2do semestre: ,{mat3_req_sem2}\033[0m")
+print(f"\033[1mTotal de material {mat3_produ1} requerido en el año {año2}: ,{mat3_req_total}\033[0m")
+
+# === PRODUCTO 2 ===
+print("")
+print("\033[1;33mTabla 4: Presupuesto de Requerimiento de materiales\033[0m")
+print("Producto:", producto2)
+print("Unidades a producir primer semestre:", unid1_produ2)
+print("Unidades a producir segundo semestre:", unid2_produ2)
+print("Unidades a producir total año:", unid_produ_total2)
+
+# === Material 1 ===
+print("\n\033[1mPrimer Material\033[0m")
+mat1_produ2 = input("Nombre del material: ")
+req_mat1_produ2 = int(input("Requerimiento por unidad: "))
+
+mat1_req2_sem1 = unid1_produ2 * req_mat1_produ2
+mat1_req2_sem2 = unid2_produ2 * req_mat1_produ2
+mat1_req2_total = unid_produ_total2 * req_mat1_produ2
+
+print(f"\033[1mTotal de material {mat1_produ2} requerido en el 1er semestre: ,{mat1_req2_sem1}\033[0m")
+print(f"\033[1mTotal de material {mat1_produ2} requerido en el 2do semestre: ,{mat1_req2_sem2}\033[0m")
+print(f"\033[1mTotal de material {mat1_produ2} requerido en el año {año2}: ,{mat1_req2_total}\033[0m")
+
+# === Material 2 ===
+print("\n\033[1mSegundo Material\033[0m")
+mat2_produ2 = input("Nombre del material: ")
+req_mat2_produ2 = int(input("Requerimiento por unidad: "))
+
+mat2_req2_sem1 = unid1_produ2 * req_mat2_produ2
+mat2_req2_sem2 = unid2_produ2 * req_mat2_produ2
+mat2_req2_total = unid_produ_total2 * req_mat2_produ2
+
+print(f"\033[1mTotal de material {mat2_produ2} requerido en el 1er semestre: ,{mat2_req2_sem1}\033[0m")
+print(f"\033[1mTotal de material {mat2_produ2} requerido en el 2do semestre: ,{mat2_req2_sem2}\033[0m")
+print(f"\033[1mTotal de material {mat2_produ2} requerido en el año {año2}: ,{mat2_req2_total}\033[0m")
+
+# === Material 3 ===
+print("\n\033[1mTercer Material\033[0m")
+mat3_produ2 = input("Nombre del material: ")
+req_mat3_produ2 = int(input("Requerimiento por unidad: "))
+
+mat3_req2_sem1 = unid1_produ2 * req_mat3_produ2
+mat3_req2_sem2 = unid2_produ2 * req_mat3_produ2
+mat3_req2_total = unid_produ_total2 * req_mat3_produ2
+
+print(f"\033[1mTotal de material {mat3_produ2} requerido en el 1er semestre: ,{mat3_req2_sem1}\033[0m")
+print(f"\033[1mTotal de material {mat3_produ2} requerido en el 2do semestre: ,{mat3_req2_sem2}\033[0m")
+print(f"\033[1mTotal de material {mat3_produ2} requerido en el año {año2}: ,{mat3_req2_total}\033[0m")
+
+# === PRODUCTO 3 ===
+print("")
+print("\033[1;33mTabla 4: Presupuesto de Requerimiento de materiales\033[0m")
+print("Producto:", producto3)
+print("Unidades a producir primer semestre:", unid1_produ3)
+print("Unidades a producir segundo semestre:", unid2_produ3)
+print("Unidades a producir total año:", unid_produ_total3)
+
+# === Material 1 ===
+print("\n\033[1mPrimer Material\033[0m")
+mat1_produ3 = input("Nombre del material: ")
+req_mat1_produ3 = int(input("Requerimiento por unidad: "))
+
+mat1_req3_sem1 = unid1_produ3 * req_mat1_produ3
+mat1_req3_sem2 = unid2_produ3 * req_mat1_produ3
+mat1_req3_total = unid_produ_total3 * req_mat1_produ3
+
+print(f"\033[1mTotal de material {mat1_produ3} requerido en el 1er semestre: ,{mat1_req3_sem1}\033[0m")
+print(f"\033[1mTotal de material {mat1_produ3} requerido en el 2do semestre: ,{mat1_req3_sem2}\033[0m")
+print(f"\033[1mTotal de material {mat1_produ3} requerido en el año {año2}: ,{mat1_req3_total}\033[0m")
+
+# === Material 2 ===
+print("\n\033[1mSegundo Material\033[0m")
+mat2_produ3 = input("Nombre del material: ")
+req_mat2_produ3 = int(input("Requerimiento por unidad: "))
+
+mat2_req3_sem1 = unid1_produ3 * req_mat2_produ3
+mat2_req3_sem2 = unid2_produ3 * req_mat2_produ3
+mat2_req3_total = unid_produ_total3 * req_mat2_produ3
+
+print(f"\033[1mTotal de material {mat2_produ3} requerido en el 1er semestre: ,{mat2_req3_sem1}\033[0m")
+print(f"\033[1mTotal de material {mat2_produ3} requerido en el 2do semestre: ,{mat2_req3_sem2}\033[0m")
+print(f"\033[1mTotal de material {mat2_produ3} requerido en el año {año2}: ,{mat2_req3_total}\033[0m")
+
+# === Material 3 ===
+print("\n\033[1mTercer Material\033[0m")
+mat3_produ3 = input("Nombre del material: ")
+req_mat3_produ3 = int(input("Requerimiento por unidad: "))
+
+mat3_req3_sem1 = unid1_produ3 * req_mat3_produ3
+mat3_req3_sem2 = unid2_produ3 * req_mat3_produ3
+mat3_req3_total = unid_produ_total3 * req_mat3_produ3
+
+print(f"\033[1mTotal de material {mat3_produ3} requerido en el 1er semestre: ,{mat3_req3_sem1}\033[0m")
+print(f"\033[1mTotal de material {mat3_produ3} requerido en el 2do semestre: ,{mat3_req3_sem2}\033[0m")
+print(f"\033[1mTotal de material {mat3_produ3} requerido en el año {año2}: ,{mat3_req3_total}\033[0m")
+
+from tabulate import tabulate
+
+tabla4_completa = [
+    [f"\033[1mPRODUCTO {producto1}\033[0m", "", "", "", ""],
+    ["Unidades a producir", unid_produ, unid_produ2, unid_produ_total, ""],
+    [mat1_produ1, "Requerimiento de material", req_mat1_produ1, "", ""],
+    ["", f"Total de {mat1_produ1} requerido", mat1_req_sem1, mat1_req_sem2, mat1_req_total],
+    [mat2_produ1, "Requerimiento de material", req_mat2_produ1, "", ""],
+    ["", f"Total de {mat2_produ1} requerido", mat2_req_sem1, mat2_req_sem2, mat2_req_total],
+    [mat3_produ1, "Requerimiento de material", req_mat3_produ1, "", ""],
+    ["", f"Total de {mat3_produ1} requerido", mat3_req_sem1, mat3_req_sem2, mat3_req_total],
+
+    [f"\033[1mPRODUCTO {producto2}\033[0m", "", "", "", ""],
+    ["Unidades a producir", unid1_produ2, unid2_produ2, unid_produ_total2, ""],
+    [mat1_produ2, "Requerimiento de material", req_mat1_produ2, "", ""],
+    ["", f"Total de {mat1_produ2} requerido", mat1_req2_sem1, mat1_req2_sem2, mat1_req2_total],
+    [mat2_produ2, "Requerimiento de material", req_mat2_produ2, "", ""],
+    ["", f"Total de {mat2_produ2} requerido", mat2_req2_sem1, mat2_req2_sem2, mat2_req2_total],
+    [mat3_produ2, "Requerimiento de material", req_mat3_produ2, "", ""],
+    ["", f"Total de {mat3_produ2} requerido", mat3_req2_sem1, mat3_req2_sem2, mat3_req2_total],
+
+    [f"\033[1mPRODUCTO {producto3}\033[0m", "", "", "", ""],
+    ["Unidades a producir", unid1_produ3, unid2_produ3, unid_produ_total3, ""],
+    [mat1_produ3, "Requerimiento de material", req_mat1_produ3, "", ""],
+    ["", f"Total de {mat1_produ3} requerido", mat1_req3_sem1, mat1_req3_sem2, mat1_req3_total],
+    [mat2_produ3, "Requerimiento de material", req_mat2_produ3, "", ""],
+    ["", f"Total de {mat2_produ3} requerido", mat2_req3_sem1, mat2_req3_sem2, mat2_req3_total],
+    [mat3_produ3, "Requerimiento de material", req_mat3_produ3, "", ""],
+    ["", f"Total de {mat3_produ3} requerido", mat3_req3_sem1, mat3_req3_sem2, mat3_req3_total],
+]
+
+encabezados_tabla4 = ["Producto", "Descripción", "1er Semestre", "2do Semestre", "Total Año"]
+
+print("\n\033[1;33mTabla 4: Presupuesto de Requerimiento de Materiales\033[0m")
+print(tabulate(tabla4_completa, headers=encabezados_tabla4, tablefmt="grid", stralign="center", floatfmt=".0f"))
+
+#Tabla5
+from tabulate import tabulate
+
+# ============================
+# TABLA DE REQUERIMIENTOS TOTALES (GRAMOS)
+# ============================
+
+matA_sem1_total = mat1_req_sem1 + mat1_req2_sem1 + mat1_req3_sem1
+matA_sem2_total = mat1_req_sem2 + mat1_req2_sem2 + mat1_req3_sem2
+matA_total = matA_sem1_total + matA_sem2_total
+
+matB_sem1_total = mat2_req_sem1 + mat2_req2_sem1 + mat2_req3_sem1
+matB_sem2_total = mat2_req_sem2 + mat2_req2_sem2 + mat2_req3_sem2
+matB_total = matB_sem1_total + matB_sem2_total
+
+matC_sem1_total = mat3_req_sem1 + mat3_req2_sem1 + mat3_req3_sem1
+matC_sem2_total = mat3_req_sem2 + mat3_req2_sem2 + mat3_req3_sem2
+matC_total = matC_sem1_total + matC_sem2_total
+
+tabla_resumen_requerimientos = [
+    ["Material A", f"{matA_sem1_total:,.0f}", f"{matA_sem2_total:,.0f}", f"{matA_total:,.0f}"],
+    ["Material B", f"{matB_sem1_total:,.0f}", f"{matB_sem2_total:,.0f}", f"{matB_total:,.0f}"],
+    ["Material C", f"{matC_sem1_total:,.0f}", f"{matC_sem2_total:,.0f}", f"{matC_total:,.0f}"]
+]
+
+print("\n\033[1;33mRESUMEN TOTAL DE REQUERIMIENTOS (GRAMOS)\033[0m")
+print(tabulate(tabla_resumen_requerimientos, headers=["Material", "1er Semestre", "2do Semestre", "Total Año"], tablefmt="grid"))
+
+# ============================
+# TABLA 5: PRESUPUESTO DE COMPRA DE MATERIALES
+# ============================
+
+print("\n\033[1;33mTABLA 5: PRESUPUESTO DE COMPRA DE MATERIALES\033[0m")
+
+# === Material A ===
+print("\n\033[1mMaterial A\033[0m")
+invfin_a1 = int(input("Inventario final 1er semestre: "))
+invfin_a2 = int(input("Inventario final 2do semestre: "))
+invini_a1 = int(input("Inventario inicial 1er semestre: "))
+invini_a2 = int(input("Inventario inicial 2do semestre: "))
+precio_a1 = float(input("Precio de compra 1er semestre: "))
+precio_a2 = float(input("Precio de compra 2do semestre: "))
+
+matA_compra1 = matA_sem1_total + invfin_a1 - invini_a1
+matA_compra2 = matA_sem2_total + invfin_a2 - invini_a2
+matA_compra_total = matA_compra1 + matA_compra2
+matA_cost1 = matA_compra1 * precio_a1
+matA_cost2 = matA_compra2 * precio_a2
+matA_cost_total = matA_cost1 + matA_cost2
+
+# === Material B ===
+print("\n\033[1mMaterial B\033[0m")
+invfin_b1 = int(input("Inventario final 1er semestre: "))
+invfin_b2 = int(input("Inventario final 2do semestre: "))
+invini_b1 = int(input("Inventario inicial 1er semestre: "))
+invini_b2 = int(input("Inventario inicial 2do semestre: "))
+precio_b1 = float(input("Precio de compra 1er semestre: "))
+precio_b2 = float(input("Precio de compra 2do semestre: "))
+
+matB_compra1 = matB_sem1_total + invfin_b1 - invini_b1
+matB_compra2 = matB_sem2_total + invfin_b2 - invini_b2
+matB_compra_total = matB_compra1 + matB_compra2
+matB_cost1 = matB_compra1 * precio_b1
+matB_cost2 = matB_compra2 * precio_b2
+matB_cost_total = matB_cost1 + matB_cost2
+
+# === Material C ===
+print("\n\033[1mMaterial C\033[0m")
+invfin_c1 = int(input("Inventario final 1er semestre: "))
+invfin_c2 = int(input("Inventario final 2do semestre: "))
+invini_c1 = int(input("Inventario inicial 1er semestre: "))
+invini_c2 = int(input("Inventario inicial 2do semestre: "))
+precio_c1 = float(input("Precio de compra 1er semestre: "))
+precio_c2 = float(input("Precio de compra 2do semestre: "))
+
+matC_compra1 = matC_sem1_total + invfin_c1 - invini_c1
+matC_compra2 = matC_sem2_total + invfin_c2 - invini_c2
+matC_compra_total = matC_compra1 + matC_compra2
+matC_cost1 = matC_compra1 * precio_c1
+matC_cost2 = matC_compra2 * precio_c2
+matC_cost_total = matC_cost1 + matC_cost2
+
+# === Totales finales ===
+compras_totales_1 = matA_cost1 + matB_cost1 + matC_cost1
+compras_totales_2 = matA_cost2 + matB_cost2 + matC_cost2
+compras_totales = compras_totales_1 + compras_totales_2
+
+# === Tabla final ===
+tabla5 = [
+    ["Material A", matA_sem1_total, matA_sem2_total, "", matA_total],
+    ["(+) Inventario final", invfin_a1, invfin_a2, "", invfin_a1 + invfin_a2],
+    ["Total de materiales", matA_sem1_total + invfin_a1, matA_sem2_total + invfin_a2, "", matA_total + invfin_a1 + invfin_a2],
+    ["(-) Inventario inicial", invini_a1, invini_a2, "", invini_a1 + invini_a2],
+    ["Material a comprar", matA_compra1, matA_compra2, "", matA_compra_total],
+    ["Precio de compra", f"${precio_a1:,.2f}", f"${precio_a2:,.2f}", "", ""],
+    ["Total Material A $", f"${matA_cost1:,.2f}", f"${matA_cost2:,.2f}", "", f"${matA_cost_total:,.2f}"],
+
+    ["Material B", matB_sem1_total, matB_sem2_total, "", matB_total],
+    ["(+) Inventario final", invfin_b1, invfin_b2, "", invfin_b1 + invfin_b2],
+    ["Total de materiales", matB_sem1_total + invfin_b1, matB_sem2_total + invfin_b2, "", matB_total + invfin_b1 + invfin_b2],
+    ["(-) Inventario inicial", invini_b1, invini_b2, "", invini_b1 + invini_b2],
+    ["Material a comprar", matB_compra1, matB_compra2, "", matB_compra_total],
+    ["Precio de compra", f"${precio_b1:,.2f}", f"${precio_b2:,.2f}", "", ""],
+    ["Total Material B $", f"${matB_cost1:,.2f}", f"${matB_cost2:,.2f}", "", f"${matB_cost_total:,.2f}"],
+
+    ["Material C", matC_sem1_total, matC_sem2_total, "", matC_total],
+    ["(+) Inventario final", invfin_c1, invfin_c2, "", invfin_c1 + invfin_c2],
+    ["Total de materiales", matC_sem1_total + invfin_c1, matC_sem2_total + invfin_c2, "", matC_total + invfin_c1 + invfin_c2],
+    ["(-) Inventario inicial", invini_c1, invini_c2, "", invini_c1 + invini_c2],
+    ["Material a comprar", matC_compra1, matC_compra2, "", matC_compra_total],
+    ["Precio de compra", f"${precio_c1:,.2f}", f"${precio_c2:,.2f}", "", ""],
+    ["Total Material C $", f"${matC_cost1:,.2f}", f"${matC_cost2:,.2f}", "", f"${matC_cost_total:,.2f}"],
+
+    ["\033[1mCompras Totales\033[0m", f"${compras_totales_1:,.2f}", f"${compras_totales_2:,.2f}", "", f"${compras_totales:,.2f}"]
+]
+
+print("\n" + tabulate(tabla5, headers=["Material", "1er Sem", "2do Sem", "", "Total Año"], tablefmt="grid", stralign="center"))
+
+from tabulate import tabulate
+
+#TABLA 6___________---------------------------------------
+print("\n\033[1;33mTabla 6: Determinación del Saldo de Proveedores y Flujo de Salidas\033[0m")
+
+# === Entradas del usuario ===
+saldo_ant = float(input("Saldo de Proveedores al 31-Dic del año anterior: "))
+porc_pago_actual = float(input("¿Qué porcentaje se pagará de las compras actuales? (ej. 60): "))
+
+# === Total de compras viene de Tabla 5 (usa tu variable real)
+# Aquí asumimos variable: compras_totales
+# compras_totales = ...  ← asegúrate que esta variable exista previamente en tu código
+total_proveedores = saldo_ant + compras_totales
+
+# === Pagos
+pago_saldo_anterior = saldo_ant  # 100% se paga
+pago_proveedores_actual = compras_totales * (porc_pago_actual / 100)
+total_salidas = pago_saldo_anterior + pago_proveedores_actual
+
+# === Saldo final de proveedores
+saldo_final_prov = total_proveedores - total_salidas
+
+# === Construcción de la tabla
+tabla6 = [
+    ["Saldo de Proveedores al 31-Dic anterior", f"${saldo_ant:,.2f}"],
+    ["Compras del año actual", f"${compras_totales:,.2f}"],
+    ["Total de Proveedores del año", f"${total_proveedores:,.2f}"],
+    ["", ""],
+    ["Pagos del año anterior (100%)", f"${pago_saldo_anterior:,.2f}"],
+    [f"Pagos del año actual ({porc_pago_actual:.0f}%)", f"${pago_proveedores_actual:,.2f}"],
+    ["Total de Salidas del año", f"${total_salidas:,.2f}"],
+    ["", ""],
+    ["Saldo final de Proveedores del año", f"${saldo_final_prov:,.2f}"]
+]
+
+# === Impresión final
+print(tabulate(tabla6, headers=["Descripción", "Importe"], tablefmt="grid", stralign="right"))
+
+from tabulate import tabulate
+
+#TABLA 7-----------------------------------------------------------
+from tabulate import tabulate
+
+print("\n\033[1;33mTabla 7: Presupuesto de Mano de Obra Directa\033[0m")
+
+# === Producto 1 ===
+print(f"\n\033[1mProducto {producto1}\033[0m")
+
+# Entrada de datos
+hrs_x_ud1_1s = float(input("Horas requeridas por unidad (1er Semestre): "))
+cuota1_1s = float(input("Cuota por hora (1er Semestre): "))
+hrs_x_ud1_2s = float(input("Horas requeridas por unidad (2do Semestre): "))
+cuota1_2s = float(input("Cuota por hora (2do Semestre): "))
+
+# Cálculos
+hrs1_1s = unid_produ * hrs_x_ud1_1s
+hrs1_2s = unid_produ2 * hrs_x_ud1_2s
+hrs1_total = hrs1_1s + hrs1_2s
+mod1_1s = hrs1_1s * cuota1_1s
+mod1_2s = hrs1_2s * cuota1_2s
+mod1_total = mod1_1s + mod1_2s
+
+# === Producto 2 ===
+print(f"\n\033[1mProducto {producto2}\033[0m")
+
+hrs_x_ud2_1s = float(input("Horas requeridas por unidad (1er Semestre): "))
+cuota2_1s = float(input("Cuota por hora (1er Semestre): "))
+hrs_x_ud2_2s = float(input("Horas requeridas por unidad (2do Semestre): "))
+cuota2_2s = float(input("Cuota por hora (2do Semestre): "))
+
+hrs2_1s = unid1_produ2 * hrs_x_ud2_1s
+hrs2_2s = unid2_produ2 * hrs_x_ud2_2s
+hrs2_total = hrs2_1s + hrs2_2s
+mod2_1s = hrs2_1s * cuota2_1s
+mod2_2s = hrs2_2s * cuota2_2s
+mod2_total = mod2_1s + mod2_2s
+
+# === Producto 3 ===
+print(f"\n\033[1mProducto {producto3}\033[0m")
+
+hrs_x_ud3_1s = float(input("Horas requeridas por unidad (1er Semestre): "))
+cuota3_1s = float(input("Cuota por hora (1er Semestre): "))
+hrs_x_ud3_2s = float(input("Horas requeridas por unidad (2do Semestre): "))
+cuota3_2s = float(input("Cuota por hora (2do Semestre): "))
+
+hrs3_1s = unid1_produ3 * hrs_x_ud3_1s
+hrs3_2s = unid2_produ3 * hrs_x_ud3_2s
+hrs3_total = hrs3_1s + hrs3_2s
+mod3_1s = hrs3_1s * cuota3_1s
+mod3_2s = hrs3_2s * cuota3_2s
+mod3_total = mod3_1s + mod3_2s
+
+# === Totales generales ===
+total_hrs_1s = hrs1_1s + hrs2_1s + hrs3_1s
+total_hrs_2s = hrs1_2s + hrs2_2s + hrs3_2s
+total_hrs = total_hrs_1s + total_hrs_2s
+
+total_mod_1s = mod1_1s + mod2_1s + mod3_1s
+total_mod_2s = mod1_2s + mod2_2s + mod3_2s
+total_mod = total_mod_1s + total_mod_2s
+
+# === Tabla ===
+tabla7 = [
+    [f"\033[1mPRODUCTO {producto1}\033[0m", "", "", ""],
+    ["Unidades a producir", unid_produ, unid_produ2, unid_produ_total],
+    ["Horas requeridas por unidad", hrs_x_ud1_1s, hrs_x_ud1_2s, ""],
+    ["Total de horas requeridas", hrs1_1s, hrs1_2s, hrs1_total],
+    ["Cuota por hora", f"${cuota1_1s:.2f}", f"${cuota1_2s:.2f}", ""],
+    ["Importe de M.O.D.", f"${mod1_1s:,.2f}", f"${mod1_2s:,.2f}", f"${mod1_total:,.2f}"],
+
+    [f"\033[1mPRODUCTO {producto2}\033[0m", "", "", ""],
+    ["Unidades a producir", unid1_produ2, unid2_produ2, unid_produ_total2],
+    ["Horas requeridas por unidad", hrs_x_ud2_1s, hrs_x_ud2_2s, ""],
+    ["Total de horas requeridas", hrs2_1s, hrs2_2s, hrs2_total],
+    ["Cuota por hora", f"${cuota2_1s:.2f}", f"${cuota2_2s:.2f}", ""],
+    ["Importe de M.O.D.", f"${mod2_1s:,.2f}", f"${mod2_2s:,.2f}", f"${mod2_total:,.2f}"],
+
+    [f"\033[1mPRODUCTO {producto3}\033[0m", "", "", ""],
+    ["Unidades a producir", unid1_produ3, unid2_produ3, unid_produ_total3],
+    ["Horas requeridas por unidad", hrs_x_ud3_1s, hrs_x_ud3_2s, ""],
+    ["Total de horas requeridas", hrs3_1s, hrs3_2s, hrs3_total],
+    ["Cuota por hora", f"${cuota3_1s:.2f}", f"${cuota3_2s:.2f}", ""],
+    ["Importe de M.O.D.", f"${mod3_1s:,.2f}", f"${mod3_2s:,.2f}", f"${mod3_total:,.2f}"],
+
+    [f"\033[1mTOTALES GENERALES\033[0m", "", "", ""],
+    ["Total de horas requeridas", total_hrs_1s, total_hrs_2s, total_hrs],
+    ["Total de M.O.D.", f"${total_mod_1s:,.2f}", f"${total_mod_2s:,.2f}", f"${total_mod:,.2f}"]
+]
+
+print("\n" + tabulate(tabla7, headers=["Descripción", "1er Semestre", "2do Semestre", "Total 2009"], tablefmt="grid", stralign="center"))
+
+
+#TABLA 8---------------------------------------------------------
+print("\n\033[1;33mTabla 8: Presupuesto de Gastos Indirectos de Fabricación\033[0m")
+
+# === Entradas por categoría ===
+print("Introduce los gastos indirectos por categoría:")
+
+deprec1 = float(input("Depreciación 1er semestre: "))
+deprec2 = float(input("Depreciación 2do semestre: "))
+seguros1 = float(input("Seguros 1er semestre: "))
+seguros2 = float(input("Seguros 2do semestre: "))
+mante1 = float(input("Mantenimiento 1er semestre: "))
+mante2 = float(input("Mantenimiento 2do semestre: "))
+energ1 = float(input("Energéticos 1er semestre: "))
+energ2 = float(input("Energéticos 2do semestre: "))
+otros1 = float(input("Otros G.I.F. 1er semestre: "))
+otros2 = float(input("Otros G.I.F. 2do semestre: "))
+
+# === Totales por rubro y generales ===
+deprec_total = deprec1 + deprec2
+seguros_total = seguros1 + seguros2
+mante_total = mante1 + mante2
+energ_total = energ1 + energ2
+otros_total = otros1 + otros2
+
+total_gif_sem1 = deprec1 + seguros1 + mante1 + energ1 + otros1
+total_gif_sem2 = deprec2 + seguros2 + mante2 + energ2 + otros2
+total_gif_anual = total_gif_sem1 + total_gif_sem2
+
+# === Costo por hora de GIF (usa total_hrs de la tabla anterior)
+# Asegúrate de que `total_hrs` fue calculado antes como: total_hrs = total_hrs_1s + total_hrs_2s
+costo_hora_gif = total_gif_anual / total_hrs if total_hrs > 0 else 0
+
+# === Tabla de gastos indirectos
+tabla8 = [
+    ["Depreciación", f"${deprec1:,.2f}", f"${deprec2:,.2f}", f"${deprec_total:,.2f}"],
+    ["Seguros", f"${seguros1:,.2f}", f"${seguros2:,.2f}", f"${seguros_total:,.2f}"],
+    ["Mantenimiento", f"${mante1:,.2f}", f"${mante2:,.2f}", f"${mante_total:,.2f}"],
+    ["Energéticos", f"${energ1:,.2f}", f"${energ2:,.2f}", f"${energ_total:,.2f}"],
+    ["Otros", f"${otros1:,.2f}", f"${otros2:,.2f}", f"${otros_total:,.2f}"],
+    ["\033[1mTotal G.I.F. por semestre\033[0m", f"${total_gif_sem1:,.2f}", f"${total_gif_sem2:,.2f}", f"${total_gif_anual:,.2f}"],
+    ["", "", "", ""],
+    ["Coeficiente para determinar el costo por hora de G.I.F.", "", "", ""],
+    ["Total G.I.F.", "", "", f"${total_gif_anual:,.2f}"],
+    ["(/) Total horas M.O.D. Anual", "", "", f"{total_hrs:,.0f}"],
+    ["(=) Costo por hora de G.I.F.", "", "", f"${costo_hora_gif:,.2f}"]
+]
+
+# === Imprimir tabla
+print("\n" + tabulate(tabla8, headers=["Concepto", "1er Semestre", "2do Semestre", "Total 2009"], tablefmt="grid", stralign="center"))
+
+import pandas as pd
+
+# ------------------------------
+# 9. Presupuesto de Gastos de Operación
+# ------------------------------
+# VARIABLES DE EJEMPLO (reemplaza con tus datos reales)
+depreciacion_1s = 10000.0
+depreciacion_2s = 12000.0
+sueldos_1s = 50000.0
+sueldos_2s = 55000.0
+ventas_1s = 300000.0  # para comisiones
+ventas_2s = 350000.0
+varios_1s = 8000.0
+varios_2s = 9000.0
+intereses_1s = 2000.0
+intereses_2s = 2500.0
+
+# Cálculo de comisiones (5% sobre ventas)
+comisiones_1s = ventas_1s * 0.05
+comisiones_2s = ventas_2s * 0.05
+
+# Calcular totales por concepto
+total_depreciacion = depreciacion_1s + depreciacion_2s
+total_sueldos = sueldos_1s + sueldos_2s
+total_comisiones = comisiones_1s + comisiones_2s
+total_varios = varios_1s + varios_2s
+total_intereses = intereses_1s + intereses_2s
+
+# Totales semestrales y anual
+total_1s = (depreciacion_1s + sueldos_1s + comisiones_1s + varios_1s + intereses_1s)
+total_2s = (depreciacion_2s + sueldos_2s + comisiones_2s + varios_2s + intereses_2s)
+total_anual = total_1s + total_2s
+
+# Crear DataFrame editable
+df_tabla9 = pd.DataFrame({
+    'Concepto': [
+        'Depreciación',
+        'Sueldos y salarios',
+        'Comisiones (5%)',
+        'Varios',
+        'Intereses por obligaciones',
+        'TOTAL Gastos de Operación'
+    ],
+    '1er Semestre': [
+        depreciacion_1s,
+        sueldos_1s,
+        comisiones_1s,
+        varios_1s,
+        intereses_1s,
+        total_1s
+    ],
+    '2do Semestre': [
+        depreciacion_2s,
+        sueldos_2s,
+        comisiones_2s,
+        varios_2s,
+        intereses_2s,
+        total_2s
+    ],
+    'Total Anual': [
+        total_depreciacion,
+        total_sueldos,
+        total_comisiones,
+        total_varios,
+        total_intereses,
+        total_anual
+    ]
+})
+
+# Mostrar en consola
+print("9. Presupuesto de Gastos de Operación")
+print(df_tabla9.to_string(index=False))
+
+# ------------------------------
+# 10. Determinación del Costo Unitario de Productos Terminados
+# ------------------------------
+
+def calcular_costo_unitario():
+    productos = ["Material A", "Material B", "Material C", "Mano de Obra", "Gastos Indirectos de Fabricación"]
+    datos = []
+
+    print("\n10. Determinación del Costo Unitario de Productos Terminados")
+    for item in productos:
+        costo = float(input(f"Ingresa el costo de {item} (2do semestre): "))
+        cantidad = float(input(f"Ingresa la cantidad de {item} por unidad: "))
+        # Mostrar la fórmula al usuario
+        print(f"Fórmula: {costo} * {cantidad}")
+        subtotal = costo * cantidad
+        print(f"Resultado: {subtotal}\n")
+        datos.append((item, costo, cantidad, subtotal))
+
+    # Cálculo del costo unitario total
+    total_unitario = sum(row[3] for row in datos)
+    datos.append(("Costo Unitario Total", "", "", total_unitario))
+
+    # Mostrar tabla final
+    print(tabulate(datos, headers=["Descripción", "Costo", "Cantidad", "Costo Unitario"], 
+                   tablefmt="grid", floatfmt=".2f", stralign="center"))
+
+if __name__ == "__main__":  # 
+
+    calcular_costo_unitario()
+
+    # ------------------------------
+# 11. Valuación de Inventarios Finales hasta Estado de Resultados
+# ------------------------------
+# VARIABLES DE EJEMPLO (asigna tus valores reales)
+# Unidad final de cada material (obtén de producción)
+unid_fin_A = 150
+unid_fin_B = 120
+unid_fin_C = 100
+
+# Costo unitario calculado previamente en punto 10
+costo_unitA = 50.0    # unitA / cantA
+costo_unitB = 40.0    # unitB / cantB
+costo_unitC = 30.0    # unitC / cantC
+
+# 11.1 Valoración de Inventarios Finales
+invA = unid_fin_A * costo_unitA
+invB = unid_fin_B * costo_unitB
+invC = unid_fin_C * costo_unitC
+
+tabla11 = [
+    ["Material A", unid_fin_A, f"{costo_unitA:.2f}", f"{invA:.2f}"],
+    ["Material B", unid_fin_B, f"{costo_unitB:.2f}", f"{invB:.2f}"],
+    ["Material C", unid_fin_C, f"{costo_unitC:.2f}", f"{invC:.2f}"],
+]
+total_inv = invA + invB + invC
+tabla11.append(["Total Inventarios Finales", "", "", f"{total_inv:.2f}"])
+
+print("11. Valuación de Inventarios Finales:")
+print(tabulate(tabla11, headers=["Material","Unid.Final","Costo/U","Total Inv."], tablefmt="grid", floatfmt=".2f"))
+
+# ------------------------------
+# 11.2 Estado de Resultados (Resumen)
+# ------------------------------
+ventas_totales = 500000.0     # Total ventas anual
+costo_ventas = 200000.0       # Usar Costo de Ventas = Costo producción – inv.final + inv.inicial
+
+gastos_op = 80000.0           # Total Gastos Operación (punto 9)
+
+ganancia_bruta = ventas_totales - costo_ventas
+utilidad_neta = ganancia_bruta - gastos_op
+
+estado = [
+    ["Ventas Totales", f"${ventas_totales:,.2f}"],
+    ["Costo de Ventas", f"${costo_ventas:,.2f}"],
+    ["\u0332", ""],
+    ["Ganancia Bruta", f"${ganancia_bruta:,.2f}"],
+    ["Gastos de Operación", f"${gastos_op:,.2f}"],
+    ["\u0332", ""],
+    ["Utilidad Neta", f"${utilidad_neta:,.2f}"],
+]
+
+print("\nEstado de Resultados:")
+print(tabulate(estado, headers=["Concepto","Importe"], tablefmt="grid"))
+
+#13 lab regionales
+print("\033[1mLABORATORIOS REGIONALES S.A.\033[0m")
+print("\033[1;34mESTADO DE FLUJO DE EFECTIVO - PRESUPUESTO 2009\033[0m")
+print(" ")
+
+# Entradas
+saldo_inicial = float(input("Saldo inicial de efectivo: $"))
+cobranza_2009 = float(input("Cobranza 2009: $"))
+cobranza_2008 = float(input("Cobranza 2008: $"))
+
+total_entradas = cobranza_2009 + cobranza_2008
+efectivo_disponible = saldo_inicial + total_entradas
+
+print("\n\033[1;32mENTRADAS:\033[0m")
+print(f"Total Entradas: ${total_entradas:,.2f}")
+print(f"Efectivo Disponible: ${efectivo_disponible:,.2f}")
+
+# Salidas
+print("\n\033[1;31mSALIDAS:\033[0m")
+prov_2009 = float(input("Pago a Proveedores 2009: $"))
+prov_2008 = float(input("Pago a Proveedores 2008: $"))
+mod = float(input("Mano de obra directa: $"))
+gif = float(input("Gastos indirectos (sin depreciación): $"))
+gop = float(input("Gastos de operación (sin depreciación): $"))
+activo_fijo = float(input("Compra de activo fijo: $"))
+isr_2008 = float(input("Pago ISR 2008: $"))
+isr_2009 = float(input("Pago ISR 2009: $"))
+
+total_salidas = prov_2009 + prov_2008 + mod + gif + gop + activo_fijo + isr_2008 + isr_2009
+efectivo_final = efectivo_disponible - total_salidas
+
+print("\n\033[1;35mRESUMEN DE FLUJO DE EFECTIVO\033[0m")
+print(f"Total Salidas: ${total_salidas:,.2f}")
+print(f"\033[1mFlujo de Efectivo Final: ${efectivo_final:,.2f}\033[0m")
+
+
+
+
+# 14ultima tabla 
+print("\033[1mLABORATORIOS REGIONALES S.A.\033[0m")
+print("\033[1;34mBALANCE GENERAL AL 31 DE DICIEMBRE DE 2009\033[0m")
+print(" ")
+
+# Activos Circulantes
+print("\033[1;36mACTIVOS CIRCULANTES\033[0m")
+efectivo = float(input("Efectivo (de flujo final): $"))
+clientes = float(input("Clientes: $"))
+inv_materiales = float(input("Inventario de materiales: $"))
+inv_productos = float(input("Inventario de productos terminados: $"))
+
+activos_circulantes = efectivo + clientes + inv_materiales + inv_productos
+print(f"Total Activos Circulantes: ${activos_circulantes:,.2f}")
+
+# Activos No Circulantes
+print("\n\033[1;36mACTIVOS NO CIRCULANTES\033[0m")
+terreno = float(input("Terreno: $"))
+planta_equipo = float(input("Planta y equipo: $"))
+depreciacion = float(input("Depreciación acumulada: $"))
+
+activos_no_circulantes = terreno + planta_equipo - depreciacion
+total_activos = activos_circulantes + activos_no_circulantes
+
+print(f"Total Activos No Circulantes: ${activos_no_circulantes:,.2f}")
+print(f"\033[1mTOTAL ACTIVOS: ${total_activos:,.2f}\033[0m")
+
+# Pasivo
+print("\n\033[1;36mPASIVO A CORTO PLAZO\033[0m")
+proveedores = float(input("Proveedores: $"))
+documentos = float(input("Documentos por pagar: $"))
+ptu = float(input("PTU por pagar: $"))
+
+pasivo_corto = proveedores + documentos + ptu
+
+print("\n\033[1;36mPASIVO A LARGO PLAZO\033[0m")
+obligaciones = float(input("Obligaciones por pagar: $"))
+total_pasivo = pasivo_corto + obligaciones
+print(f"\033[1mTOTAL PASIVO: ${total_pasivo:,.2f}\033[0m")
+
+# Capital Contable
+print("\n\033[1;36mCAPITAL CONTABLE\033[0m")
+cap_aportado = float(input("Capital aportado: $"))
+cap_ganado = float(input("Capital ganado: $"))
+utilidad = float(input("Utilidad del ejercicio: $"))
+
+capital_total = cap_aportado + cap_ganado + utilidad
+print(f"\033[1mTOTAL CAPITAL CONTABLE: ${capital_total:,.2f}\033[0m")
+
+# Total
+suma_pasivo_capital = total_pasivo + capital_total
+print(f"\n\033[1;32mTOTAL PASIVO + CAPITAL: ${suma_pasivo_capital:,.2f}\033[0m")
+
+# Verificación
+if abs(suma_pasivo_capital - total_activos) < 1:
+    print("\033[1;32m¡El balance está cuadrado!\033[0m")
+else:
+    print("\033[1;31mEl balance NO está cuadrado. Revisa los datos.\033[0m")
