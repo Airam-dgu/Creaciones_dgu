@@ -850,32 +850,21 @@ import pandas as pd
 # 9. Presupuesto de Gastos de Operación
 # ------------------------------
 # VARIABLES DE EJEMPLO (reemplaza con tus datos reales)
-depreciacion_1s = 10000.0
-depreciacion_2s = 12000.0
-sueldos_1s = 50000.0
-sueldos_2s = 55000.0
-ventas_1s = 300000.0  # para comisiones
-ventas_2s = 350000.0
-varios_1s = 8000.0
-varios_2s = 9000.0
-intereses_1s = 2000.0
-intereses_2s = 2500.0
+from tabulate import tabulate
 
-# Cálculo de comisiones (5% sobre ventas)
-comisiones_1s = ventas_1s * 0.05
-comisiones_2s = ventas_2s * 0.05
+gastos_operacion = [
+    ["Depreciación", "$ 5,000", "$ 5,000", "$ 10,000"],
+    ["Sueldos y Salarios", "$ 100,000", "$ 100,000", "$ 200,000"],
+    ["Comisiones", "$ 167,500", "$ 116,500", "$ 284,000"],
+    ["Varios", "$ 6,000", "$ 7,000", "$ 13,000"],
+    ["Intereses por Obligaciones", "$ 15,000", "$ 15,000", "$ 30,000"],
+    ["Total de Gastos de Operación", "$ 293,500", "$ 243,500", "$ 537,000"]
+]
 
-# Calcular totales por concepto
-total_depreciacion = depreciacion_1s + depreciacion_2s
-total_sueldos = sueldos_1s + sueldos_2s
-total_comisiones = comisiones_1s + comisiones_2s
-total_varios = varios_1s + varios_2s
-total_intereses = intereses_1s + intereses_2s
+headers = ["", "1er Semestre", "2do Semestre", "Total 2009"]
 
-# Totales semestrales y anual
-total_1s = (depreciacion_1s + sueldos_1s + comisiones_1s + varios_1s + intereses_1s)
-total_2s = (depreciacion_2s + sueldos_2s + comisiones_2s + varios_2s + intereses_2s)
-total_anual = total_1s + total_2s
+print(tabulate(gastos_operacion, headers=headers, tablefmt="grid"))
+
 
 # Crear DataFrame editable
 df_tabla9 = pd.DataFrame({
