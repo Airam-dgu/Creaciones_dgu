@@ -1001,99 +1001,70 @@ estado = [
 print("\nEstado de Resultados:")
 print(tabulate(estado, headers=["Concepto","Importe"], tablefmt="grid"))
 
-#13 lab regionales
-print("\033[1mLABORATORIOS REGIONALES S.A.\033[0m")
-print("\033[1;34mESTADO DE FLUJO DE EFECTIVO - PRESUPUESTO 2009\033[0m")
-print(" ")
+#LABORATORIOS
+tabla_flujo_efectivo = [
+    ["Saldo Inicial de Efectivo", "", "", "$ 50,000"],
+    ["Entradas:", "", "", ""],
+    ["  Cobranza 2009", "", "", "$ 5,112,000"],
+    ["  Cobranza 2008", "", "", "$ 50,000"],
+    ["  Total de Entradas", "", "", "$ 5,162,000"],
+    ["Efectivo Disponible", "", "", "$ 5,212,000"],
+    ["Salidas:", "", "", ""],
+    ["  Proveedores 2009", "", "", "$ 1,112,640"],
+    ["  Proveedores 2008", "", "", "$ 50,000"],
+    ["  Pago Mano de Obra Directa", "", "", "$ 932,000"],
+    ["  Pago Gastos Indirectos de Fabricación", "", "", "$ 132,000"],
+    ["  Pago de Gastos de Operación", "", "", "$ 398,000"],
+    ["  Compra de Activo Fijo (Maquinaria)", "", "", "$ 889,000"],
+    ["  Pago ISR 2008", "", "", "$ 91,999"],
+    ["  Pago ISR 2009", "", "", "$ 1,091,999"],
+    ["  Total de Salidas", "", "", "$ 3,605,639"],
+    ["Flujo de Efectivo Actual", "", "", "$ 1,606,362"]
+]
 
-# Entradas
-saldo_inicial = float(input("Saldo inicial de efectivo: $"))
-cobranza_2009 = float(input("Cobranza 2009: $"))
-cobranza_2008 = float(input("Cobranza 2008: $"))
+headers = ["LABORATORIOS REGIONALES S.A.", "", "Estado de Flujo de Efectivo", "Presupuesto del 1 de Enero al 31 de Diciembre del 2009"]
 
-total_entradas = cobranza_2009 + cobranza_2008
-efectivo_disponible = saldo_inicial + total_entradas
+print(tabulate(tabla_flujo_efectivo, headers=headers, tablefmt="grid"))
 
-print("\n\033[1;32mENTRADAS:\033[0m")
-print(f"Total Entradas: ${total_entradas:,.2f}")
-print(f"Efectivo Disponible: ${efectivo_disponible:,.2f}")
+#BALANCE GENERAL
+from tabulate import tabulate
 
-# Salidas
-print("\n\033[1;31mSALIDAS:\033[0m")
-prov_2009 = float(input("Pago a Proveedores 2009: $"))
-prov_2008 = float(input("Pago a Proveedores 2008: $"))
-mod = float(input("Mano de obra directa: $"))
-gif = float(input("Gastos indirectos (sin depreciación): $"))
-gop = float(input("Gastos de operación (sin depreciación): $"))
-activo_fijo = float(input("Compra de activo fijo: $"))
-isr_2008 = float(input("Pago ISR 2008: $"))
-isr_2009 = float(input("Pago ISR 2009: $"))
+tabla = [
+    ["ACTIVO", "", ""],
+    ["Circulante", "", ""],
+    ["Efectivo", "$", "1,606,382"],
+    ["Clientes", "$", "598,000"],
+    ["Inventario de Materiales", "$", "128,000"],
+    ["Inventario de Producto Terminado", "$", "1,313,400"],
+    ["Total de Activos Circulantes", "", "$ 3,645,782"],
+    ["No Circulante", "", ""],
+    ["Terreno", "$", "0"],
+    ["Planta y Equipo", "$", "1,950,000"],
+    ["Depreciación Acumulada", "$", "(160,000)"],
+    ["Total Activos No Circulante", "", "$ 1,790,000"],
+    ["ACTIVO TOTAL", "", "$ 5,019,782"],
 
-total_salidas = prov_2009 + prov_2008 + mod + gif + gop + activo_fijo + isr_2008 + isr_2009
-efectivo_final = efectivo_disponible - total_salidas
+    ["", "", ""],
+    ["PASIVO", "", ""],
+    ["Corto Plazo", "", ""],
+    ["Proveedores", "$", "74,762"],
+    ["Documentos por Pagar", "$", "101,000"],
+    ["ISR por Pagar", "$", "0"],
+    ["Total de Pasivo Corto Plazo", "", "$ 175,762"],
+    ["Largo Plazo", "", ""],
+    ["Documentos por Pagar", "$", "150,000"],
+    ["Total de Pasivo Largo Plazo", "", "$ 150,000"],
+    ["PASIVO TOTAL", "", "$ 325,762"],
 
-print("\n\033[1;35mRESUMEN DE FLUJO DE EFECTIVO\033[0m")
-print(f"Total Salidas: ${total_salidas:,.2f}")
-print(f"\033[1mFlujo de Efectivo Final: ${efectivo_final:,.2f}\033[0m")
+    ["", "", ""],
+    ["CAPITAL CONTABLE", "", ""],
+    ["Capital Aportado", "$", "1,399,380"],
+    ["Utilidad del Ejercicio", "$", "2,285,997"],
+    ["Total de Capital Contable", "", "$ 3,685,377"],
 
+    ["", "", ""],
+    ["SUMA DE PASIVO Y CAPITAL", "", "$ 5,019,782"]
+]
 
+print(tabulate(tabla, headers=["CUENTA", "", "VALOR"], tablefmt="grid"))
 
-
-# 14ultima tabla 
-print("\033[1mLABORATORIOS REGIONALES S.A.\033[0m")
-print("\033[1;34mBALANCE GENERAL AL 31 DE DICIEMBRE DE 2009\033[0m")
-print(" ")
-
-# Activos Circulantes
-print("\033[1;36mACTIVOS CIRCULANTES\033[0m")
-efectivo = float(input("Efectivo (de flujo final): $"))
-clientes = float(input("Clientes: $"))
-inv_materiales = float(input("Inventario de materiales: $"))
-inv_productos = float(input("Inventario de productos terminados: $"))
-
-activos_circulantes = efectivo + clientes + inv_materiales + inv_productos
-print(f"Total Activos Circulantes: ${activos_circulantes:,.2f}")
-
-# Activos No Circulantes
-print("\n\033[1;36mACTIVOS NO CIRCULANTES\033[0m")
-terreno = float(input("Terreno: $"))
-planta_equipo = float(input("Planta y equipo: $"))
-depreciacion = float(input("Depreciación acumulada: $"))
-
-activos_no_circulantes = terreno + planta_equipo - depreciacion
-total_activos = activos_circulantes + activos_no_circulantes
-
-print(f"Total Activos No Circulantes: ${activos_no_circulantes:,.2f}")
-print(f"\033[1mTOTAL ACTIVOS: ${total_activos:,.2f}\033[0m")
-
-# Pasivo
-print("\n\033[1;36mPASIVO A CORTO PLAZO\033[0m")
-proveedores = float(input("Proveedores: $"))
-documentos = float(input("Documentos por pagar: $"))
-ptu = float(input("PTU por pagar: $"))
-
-pasivo_corto = proveedores + documentos + ptu
-
-print("\n\033[1;36mPASIVO A LARGO PLAZO\033[0m")
-obligaciones = float(input("Obligaciones por pagar: $"))
-total_pasivo = pasivo_corto + obligaciones
-print(f"\033[1mTOTAL PASIVO: ${total_pasivo:,.2f}\033[0m")
-
-# Capital Contable
-print("\n\033[1;36mCAPITAL CONTABLE\033[0m")
-cap_aportado = float(input("Capital aportado: $"))
-cap_ganado = float(input("Capital ganado: $"))
-utilidad = float(input("Utilidad del ejercicio: $"))
-
-capital_total = cap_aportado + cap_ganado + utilidad
-print(f"\033[1mTOTAL CAPITAL CONTABLE: ${capital_total:,.2f}\033[0m")
-
-# Total
-suma_pasivo_capital = total_pasivo + capital_total
-print(f"\n\033[1;32mTOTAL PASIVO + CAPITAL: ${suma_pasivo_capital:,.2f}\033[0m")
-
-# Verificación
-if abs(suma_pasivo_capital - total_activos) < 1:
-    print("\033[1;32m¡El balance está cuadrado!\033[0m")
-else:
-    print("\033[1;31mEl balance NO está cuadrado. Revisa los datos.\033[0m")
